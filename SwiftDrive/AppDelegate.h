@@ -8,7 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@class GMUserFileSystem;
+@class FileSystem;
+
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+    GMUserFileSystem* fs_;
+    FileSystem* fs_delegate_;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 

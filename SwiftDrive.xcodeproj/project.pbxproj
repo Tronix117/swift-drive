@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB32366618CE2796006E4F68 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB32366518CE2796006E4F68 /* Cocoa.framework */; };
 		FB32367018CE2796006E4F68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB32366E18CE2796006E4F68 /* InfoPlist.strings */; };
 		FB32367218CE2796006E4F68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32367118CE2796006E4F68 /* main.m */; };
-		FB32367618CE2796006E4F68 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB32367418CE2796006E4F68 /* Credits.rtf */; };
 		FB32367918CE2796006E4F68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32367818CE2796006E4F68 /* AppDelegate.m */; };
 		FB32367C18CE2796006E4F68 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB32367A18CE2796006E4F68 /* MainMenu.xib */; };
 		FB32367E18CE2796006E4F68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB32367D18CE2796006E4F68 /* Images.xcassets */; };
@@ -18,6 +16,9 @@
 		FB32368618CE2796006E4F68 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB32366518CE2796006E4F68 /* Cocoa.framework */; };
 		FB32368E18CE2796006E4F68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB32368C18CE2796006E4F68 /* InfoPlist.strings */; };
 		FB32369018CE2796006E4F68 /* SwiftDriveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32368F18CE2796006E4F68 /* SwiftDriveTests.m */; };
+		FB32369D18CE29C0006E4F68 /* FileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32369C18CE29C0006E4F68 /* FileSystem.m */; };
+		FB3236A018CE2C8E006E4F68 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB32366518CE2796006E4F68 /* Cocoa.framework */; };
+		FBB60F5D18CE2D69009A9A00 /* OSXFUSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB60F5C18CE2D69009A9A00 /* OSXFUSE.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		FB32366F18CE2796006E4F68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB32367118CE2796006E4F68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB32367318CE2796006E4F68 /* SwiftDrive-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDrive-Prefix.pch"; sourceTree = "<group>"; };
-		FB32367518CE2796006E4F68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		FB32367718CE2796006E4F68 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FB32367818CE2796006E4F68 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FB32367B18CE2796006E4F68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -50,6 +50,9 @@
 		FB32368B18CE2796006E4F68 /* SwiftDriveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwiftDriveTests-Info.plist"; sourceTree = "<group>"; };
 		FB32368D18CE2796006E4F68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB32368F18CE2796006E4F68 /* SwiftDriveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftDriveTests.m; sourceTree = "<group>"; };
+		FB32369B18CE29C0006E4F68 /* FileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystem.h; sourceTree = "<group>"; };
+		FB32369C18CE29C0006E4F68 /* FileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystem.m; sourceTree = "<group>"; };
+		FBB60F5C18CE2D69009A9A00 /* OSXFUSE.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OSXFUSE.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB32366618CE2796006E4F68 /* Cocoa.framework in Frameworks */,
+				FBB60F5D18CE2D69009A9A00 /* OSXFUSE.framework in Frameworks */,
+				FB3236A018CE2C8E006E4F68 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +99,7 @@
 		FB32366418CE2796006E4F68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBB60F5C18CE2D69009A9A00 /* OSXFUSE.framework */,
 				FB32366518CE2796006E4F68 /* Cocoa.framework */,
 				FB32368418CE2796006E4F68 /* XCTest.framework */,
 				FB32366718CE2796006E4F68 /* Other Frameworks */,
@@ -120,6 +125,8 @@
 				FB32367A18CE2796006E4F68 /* MainMenu.xib */,
 				FB32367D18CE2796006E4F68 /* Images.xcassets */,
 				FB32366C18CE2796006E4F68 /* Supporting Files */,
+				FB32369B18CE29C0006E4F68 /* FileSystem.h */,
+				FB32369C18CE29C0006E4F68 /* FileSystem.m */,
 			);
 			path = SwiftDrive;
 			sourceTree = "<group>";
@@ -131,7 +138,6 @@
 				FB32366E18CE2796006E4F68 /* InfoPlist.strings */,
 				FB32367118CE2796006E4F68 /* main.m */,
 				FB32367318CE2796006E4F68 /* SwiftDrive-Prefix.pch */,
-				FB32367418CE2796006E4F68 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -232,7 +238,6 @@
 			files = (
 				FB32367018CE2796006E4F68 /* InfoPlist.strings in Resources */,
 				FB32367E18CE2796006E4F68 /* Images.xcassets in Resources */,
-				FB32367618CE2796006E4F68 /* Credits.rtf in Resources */,
 				FB32367C18CE2796006E4F68 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB32367918CE2796006E4F68 /* AppDelegate.m in Sources */,
+				FB32369D18CE29C0006E4F68 /* FileSystem.m in Sources */,
 				FB32367218CE2796006E4F68 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,14 +288,6 @@
 				FB32366F18CE2796006E4F68 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FB32367418CE2796006E4F68 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB32367518CE2796006E4F68 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		FB32367A18CE2796006E4F68 /* MainMenu.xib */ = {
@@ -384,6 +382,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jeremyt/Development/OSX/SwiftDrive/SwiftDrive,
+					/Users/jeremyt/Development/OSX/SwiftDrive,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SwiftDrive/SwiftDrive-Prefix.pch";
 				INFOPLIST_FILE = "SwiftDrive/SwiftDrive-Info.plist";
@@ -397,6 +400,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jeremyt/Development/OSX/SwiftDrive/SwiftDrive,
+					/Users/jeremyt/Development/OSX/SwiftDrive,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SwiftDrive/SwiftDrive-Prefix.pch";
 				INFOPLIST_FILE = "SwiftDrive/SwiftDrive-Info.plist";
@@ -464,6 +472,7 @@
 				FB32369518CE2796006E4F68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB32369618CE2796006E4F68 /* Build configuration list for PBXNativeTarget "SwiftDriveTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +481,7 @@
 				FB32369818CE2796006E4F68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
