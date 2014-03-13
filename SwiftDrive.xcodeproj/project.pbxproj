@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CBE0AF75A5846318BA21F9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13373D89D5424E0F9062A7C0 /* libPods.a */; };
 		FB32367018CE2796006E4F68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB32366E18CE2796006E4F68 /* InfoPlist.strings */; };
 		FB32367218CE2796006E4F68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32367118CE2796006E4F68 /* main.m */; };
 		FB32367918CE2796006E4F68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32367818CE2796006E4F68 /* AppDelegate.m */; };
-		FB32367C18CE2796006E4F68 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB32367A18CE2796006E4F68 /* MainMenu.xib */; };
 		FB32367E18CE2796006E4F68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB32367D18CE2796006E4F68 /* Images.xcassets */; };
 		FB32368518CE2796006E4F68 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB32368418CE2796006E4F68 /* XCTest.framework */; };
 		FB32368618CE2796006E4F68 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB32366518CE2796006E4F68 /* Cocoa.framework */; };
@@ -18,6 +18,14 @@
 		FB32369018CE2796006E4F68 /* SwiftDriveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32368F18CE2796006E4F68 /* SwiftDriveTests.m */; };
 		FB32369D18CE29C0006E4F68 /* FileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = FB32369C18CE29C0006E4F68 /* FileSystem.m */; };
 		FB3236A018CE2C8E006E4F68 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB32366518CE2796006E4F68 /* Cocoa.framework */; };
+		FBA40E9218CF35B9000AA582 /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40E9118CF35B9000AA582 /* AccountService.m */; };
+		FBA40E9618CF35D8000AA582 /* ObjectService.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40E9518CF35D8000AA582 /* ObjectService.m */; };
+		FBA40E9918CF35E8000AA582 /* ContainerService.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40E9818CF35E8000AA582 /* ContainerService.m */; };
+		FBA40E9C18CF3621000AA582 /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40E9B18CF3621000AA582 /* BaseService.m */; };
+		FBA40EB418CF5B67000AA582 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40EB318CF5B67000AA582 /* HTTPManager.m */; };
+		FBA40EB718D0AACE000AA582 /* ContainerStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40EB618D0AACE000AA582 /* ContainerStore.m */; };
+		FBA40EBD18D1455F000AA582 /* HDRVIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBA40EBA18D144DE000AA582 /* HDRVIcon.icns */; };
+		FBA40EBE18D145CE000AA582 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB32367A18CE2796006E4F68 /* MainMenu.xib */; };
 		FBB60F5D18CE2D69009A9A00 /* OSXFUSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB60F5C18CE2D69009A9A00 /* OSXFUSE.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13373D89D5424E0F9062A7C0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2084226712A64A4889BC1E71 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FB32366218CE2796006E4F68 /* SwiftDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB32366518CE2796006E4F68 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FB32366818CE2796006E4F68 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -52,6 +62,19 @@
 		FB32368F18CE2796006E4F68 /* SwiftDriveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftDriveTests.m; sourceTree = "<group>"; };
 		FB32369B18CE29C0006E4F68 /* FileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystem.h; sourceTree = "<group>"; };
 		FB32369C18CE29C0006E4F68 /* FileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystem.m; sourceTree = "<group>"; };
+		FBA40E9018CF35B9000AA582 /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountService.h; sourceTree = "<group>"; };
+		FBA40E9118CF35B9000AA582 /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountService.m; sourceTree = "<group>"; };
+		FBA40E9418CF35D8000AA582 /* ObjectService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectService.h; sourceTree = "<group>"; };
+		FBA40E9518CF35D8000AA582 /* ObjectService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectService.m; sourceTree = "<group>"; };
+		FBA40E9718CF35E8000AA582 /* ContainerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerService.h; sourceTree = "<group>"; };
+		FBA40E9818CF35E8000AA582 /* ContainerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerService.m; sourceTree = "<group>"; };
+		FBA40E9A18CF3621000AA582 /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
+		FBA40E9B18CF3621000AA582 /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
+		FBA40EB218CF5B67000AA582 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
+		FBA40EB318CF5B67000AA582 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
+		FBA40EB518D0AACE000AA582 /* ContainerStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerStore.h; sourceTree = "<group>"; };
+		FBA40EB618D0AACE000AA582 /* ContainerStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerStore.m; sourceTree = "<group>"; };
+		FBA40EBA18D144DE000AA582 /* HDRVIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = HDRVIcon.icns; sourceTree = "<group>"; };
 		FBB60F5C18CE2D69009A9A00 /* OSXFUSE.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OSXFUSE.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +85,7 @@
 			files = (
 				FBB60F5D18CE2D69009A9A00 /* OSXFUSE.framework in Frameworks */,
 				FB3236A018CE2C8E006E4F68 /* Cocoa.framework in Frameworks */,
+				4CBE0AF75A5846318BA21F9F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +108,7 @@
 				FB32368918CE2796006E4F68 /* SwiftDriveTests */,
 				FB32366418CE2796006E4F68 /* Frameworks */,
 				FB32366318CE2796006E4F68 /* Products */,
+				2084226712A64A4889BC1E71 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +128,7 @@
 				FB32366518CE2796006E4F68 /* Cocoa.framework */,
 				FB32368418CE2796006E4F68 /* XCTest.framework */,
 				FB32366718CE2796006E4F68 /* Other Frameworks */,
+				13373D89D5424E0F9062A7C0 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,6 +146,7 @@
 		FB32366B18CE2796006E4F68 /* SwiftDrive */ = {
 			isa = PBXGroup;
 			children = (
+				FBA40EBC18D1450E000AA582 /* Resources */,
 				FB32367718CE2796006E4F68 /* AppDelegate.h */,
 				FB32367818CE2796006E4F68 /* AppDelegate.m */,
 				FB32367A18CE2796006E4F68 /* MainMenu.xib */,
@@ -127,6 +154,9 @@
 				FB32366C18CE2796006E4F68 /* Supporting Files */,
 				FB32369B18CE29C0006E4F68 /* FileSystem.h */,
 				FB32369C18CE29C0006E4F68 /* FileSystem.m */,
+				FBA40E8918CF344C000AA582 /* Services */,
+				FBA40EB518D0AACE000AA582 /* ContainerStore.h */,
+				FBA40EB618D0AACE000AA582 /* ContainerStore.m */,
 			);
 			path = SwiftDrive;
 			sourceTree = "<group>";
@@ -160,6 +190,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FBA40E8918CF344C000AA582 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FBA40EB218CF5B67000AA582 /* HTTPManager.h */,
+				FBA40EB318CF5B67000AA582 /* HTTPManager.m */,
+				FBA40E9A18CF3621000AA582 /* BaseService.h */,
+				FBA40E9B18CF3621000AA582 /* BaseService.m */,
+				FBA40E9018CF35B9000AA582 /* AccountService.h */,
+				FBA40E9118CF35B9000AA582 /* AccountService.m */,
+				FBA40E9418CF35D8000AA582 /* ObjectService.h */,
+				FBA40E9518CF35D8000AA582 /* ObjectService.m */,
+				FBA40E9718CF35E8000AA582 /* ContainerService.h */,
+				FBA40E9818CF35E8000AA582 /* ContainerService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		FBA40EBC18D1450E000AA582 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FBA40EBA18D144DE000AA582 /* HDRVIcon.icns */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB32369318CE2796006E4F68 /* Build configuration list for PBXNativeTarget "SwiftDrive" */;
 			buildPhases = (
+				00A1122D631A4A1CBFAB6313 /* Check Pods Manifest.lock */,
 				FB32365E18CE2796006E4F68 /* Sources */,
 				FB32365F18CE2796006E4F68 /* Frameworks */,
 				FB32366018CE2796006E4F68 /* Resources */,
+				E2A0B66B6E8E48DDB0A64AB1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,9 +293,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA40EBE18D145CE000AA582 /* MainMenu.xib in Resources */,
+				FBA40EBD18D1455F000AA582 /* HDRVIcon.icns in Resources */,
 				FB32367018CE2796006E4F68 /* InfoPlist.strings in Resources */,
 				FB32367E18CE2796006E4F68 /* Images.xcassets in Resources */,
-				FB32367C18CE2796006E4F68 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,14 +310,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00A1122D631A4A1CBFAB6313 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2A0B66B6E8E48DDB0A64AB1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FB32365E18CE2796006E4F68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FB32367918CE2796006E4F68 /* AppDelegate.m in Sources */,
+				FBA40E9618CF35D8000AA582 /* ObjectService.m in Sources */,
+				FBA40E9C18CF3621000AA582 /* BaseService.m in Sources */,
+				FBA40EB718D0AACE000AA582 /* ContainerStore.m in Sources */,
+				FBA40EB418CF5B67000AA582 /* HTTPManager.m in Sources */,
 				FB32369D18CE29C0006E4F68 /* FileSystem.m in Sources */,
 				FB32367218CE2796006E4F68 /* main.m in Sources */,
+				FBA40E9218CF35B9000AA582 /* AccountService.m in Sources */,
+				FBA40E9918CF35E8000AA582 /* ContainerService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +476,7 @@
 		};
 		FB32369418CE2796006E4F68 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2084226712A64A4889BC1E71 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -397,6 +495,7 @@
 		};
 		FB32369518CE2796006E4F68 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2084226712A64A4889BC1E71 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

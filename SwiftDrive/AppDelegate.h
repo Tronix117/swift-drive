@@ -16,6 +16,4 @@
     FileSystem* fs_delegate_;
 }
 
-@property (assign) IBOutlet NSWindow *window;
-
 @end

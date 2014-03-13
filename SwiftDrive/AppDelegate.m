@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "FileSystem.h"
 #import <OSXFUSE/OSXFUSE.h>
+#import "AccountService.h"
+#import "ContainerService.h"
 
 @implementation AppDelegate
 
@@ -72,16 +74,15 @@
     [center addObserver:self selector:@selector(didUnmount:)
                    name:kGMUserFileSystemDidUnmount object:nil];
     
-    NSString* mountPath = @"/Volumes/YTFS2";
+    NSString* mountPath = @"/Volumes/SwiftDrive";
     fs_delegate_ = [[FileSystem alloc] init];
     fs_ = [[GMUserFileSystem alloc] initWithDelegate:fs_delegate_ isThreadSafe:YES];
+    [fs_delegate_ setFS: fs_];
     
     NSMutableArray* options = [NSMutableArray array];
-    //NSString* volArg =
-    //[NSString stringWithFormat:@"volicon=%@",
-    // [[NSBundle mainBundle] pathForResource:@"YTFS" ofType:@"icns"]];
-    //[options addObject:volArg];
-    [options addObject:@"volname=YTFS2"];
+    NSString* volArg = [NSString stringWithFormat:@"volicon=%@", [[NSBundle mainBundle] pathForResource:@"HDRVIcon" ofType:@"icns"]];
+    [options addObject:volArg];
+    [options addObject:@"volname=SwiftDrive"];
     [options addObject:@"rdonly"];
     [fs_ mountAtPath:mountPath withOptions:options];
 }
