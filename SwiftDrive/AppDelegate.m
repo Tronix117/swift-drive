@@ -62,9 +62,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
     // Pump up our url cache.
-    NSURLCache* cache = [NSURLCache sharedURLCache];
-    [cache setDiskCapacity:(1024 * 1024 * 500)];
-    [cache setMemoryCapacity:(1024 * 1024 * 40)];
+//    NSURLCache* cache = [NSURLCache sharedURLCache];
+//    [cache setDiskCapacity:(1024 * 1024 * 500)];
+//    [cache setMemoryCapacity:(1024 * 1024 * 40)];
     
     NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(mountFailed:)
@@ -83,7 +83,9 @@
     NSString* volArg = [NSString stringWithFormat:@"volicon=%@", [[NSBundle mainBundle] pathForResource:@"HDRVIcon" ofType:@"icns"]];
     [options addObject:volArg];
     [options addObject:@"volname=SwiftDrive"];
-    [options addObject:@"rdonly"];
+    //[options addObject:@"rdonly"];
+    [options addObject:@"noappledouble"];
+    
     [fs_ mountAtPath:mountPath withOptions:options];
 }
 

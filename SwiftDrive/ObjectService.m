@@ -14,8 +14,7 @@
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     
     __block id data = nil;
-    NSLog(@"path: %@", path);
-    [manager GET:[NSString stringWithFormat:@"%@%@", containerName, path] parameters:nil xheaders:nil success:^(id response, NSDictionary *headers) {
+    [manager request:REST_GET forRessource:[containerName stringByAppendingString: path] success:^(id response, NSDictionary *headers) {
         data = response;
         dispatch_semaphore_signal(sema);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -28,6 +27,5 @@
     
     return data;
 }
-
 
 @end

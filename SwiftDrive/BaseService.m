@@ -11,10 +11,10 @@
 @implementation BaseService
 
 - (id) init {
-    return [self initWithManager: [HTTPManager sharedManager]];
+    return [self initWithManager: [RESTManager sharedManager]];
 }
 
-- (id) initWithManager: (HTTPManager *) httpmanager{
+- (id) initWithManager: (RESTManager *) httpmanager{
     if (self = [super init]) {
         manager = httpmanager;
     }

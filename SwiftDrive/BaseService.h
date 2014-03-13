@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTTPManager.h"
+#import "RESTManager.h"
 
 @interface BaseService : NSObject {
-    HTTPManager *manager;
+    RESTManager *manager;
 }
 
-- (id) initWithManager: (HTTPManager *) httpmanager;
+- (id) initWithManager: (RESTManager *) httpmanager;
 
 @end

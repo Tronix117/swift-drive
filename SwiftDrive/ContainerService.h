@@ -10,7 +10,6 @@
 
 @interface ContainerService : BaseService
 
--(void) listObjectsAtPath: (NSString *) path forContainer: (NSString *) containerName;
 -(NSArray *) listObjectsAtPathSync: (NSString *) path forContainer: (NSString *) containerName;
 
 @end

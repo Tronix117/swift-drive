@@ -11,23 +11,11 @@
 
 @implementation ContainerService
 
-
-
--(void) listObjectsAtPath: (NSString *) path forContainer: (NSString *) containerName {
-    [manager GET:containerName parameters:nil xheaders:@{@"path": path} success:^(id data, NSDictionary *headers) {
-        NSLog(@"data: %@", data);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error: %@", error);
-    }];
-}
-
 -(NSArray *) listObjectsAtPathSync: (NSString *) path forContainer: (NSString *) containerName {
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     
     __block id data = nil;
-    NSLog(@"path: %@", path);
-    [manager GET:containerName parameters:@{@"path": [path substringFromIndex:1]} xheaders:nil success:^(id response, NSDictionary *headers) {
-        NSLog(@"data: %@", response);
+    [manager request:REST_GET forRessource:containerName withParameters:@{@"path": [path substringFromIndex:1]} andXHeaders:nil success:^(id response, NSDictionary *headers) {
         data = response;
         [[ContainerStore storeForContainer:containerName] updateWithArrayOfObject:response];
         dispatch_semaphore_signal(sema);

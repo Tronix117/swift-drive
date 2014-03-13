@@ -22,7 +22,7 @@
 		FBA40E9618CF35D8000AA582 /* ObjectService.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40E9518CF35D8000AA582 /* ObjectService.m */; };
 		FBA40E9918CF35E8000AA582 /* ContainerService.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40E9818CF35E8000AA582 /* ContainerService.m */; };
 		FBA40E9C18CF3621000AA582 /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40E9B18CF3621000AA582 /* BaseService.m */; };
-		FBA40EB418CF5B67000AA582 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40EB318CF5B67000AA582 /* HTTPManager.m */; };
+		FBA40EB418CF5B67000AA582 /* RESTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40EB318CF5B67000AA582 /* RESTManager.m */; };
 		FBA40EB718D0AACE000AA582 /* ContainerStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA40EB618D0AACE000AA582 /* ContainerStore.m */; };
 		FBA40EBD18D1455F000AA582 /* HDRVIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBA40EBA18D144DE000AA582 /* HDRVIcon.icns */; };
 		FBA40EBE18D145CE000AA582 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB32367A18CE2796006E4F68 /* MainMenu.xib */; };
@@ -70,8 +70,8 @@
 		FBA40E9818CF35E8000AA582 /* ContainerService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerService.m; sourceTree = "<group>"; };
 		FBA40E9A18CF3621000AA582 /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
 		FBA40E9B18CF3621000AA582 /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
-		FBA40EB218CF5B67000AA582 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
-		FBA40EB318CF5B67000AA582 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
+		FBA40EB218CF5B67000AA582 /* RESTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTManager.h; sourceTree = "<group>"; };
+		FBA40EB318CF5B67000AA582 /* RESTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTManager.m; sourceTree = "<group>"; };
 		FBA40EB518D0AACE000AA582 /* ContainerStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerStore.h; sourceTree = "<group>"; };
 		FBA40EB618D0AACE000AA582 /* ContainerStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerStore.m; sourceTree = "<group>"; };
 		FBA40EBA18D144DE000AA582 /* HDRVIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = HDRVIcon.icns; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 		FBA40E8918CF344C000AA582 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FBA40EB218CF5B67000AA582 /* HTTPManager.h */,
-				FBA40EB318CF5B67000AA582 /* HTTPManager.m */,
+				FBA40EB218CF5B67000AA582 /* RESTManager.h */,
+				FBA40EB318CF5B67000AA582 /* RESTManager.m */,
 				FBA40E9A18CF3621000AA582 /* BaseService.h */,
 				FBA40E9B18CF3621000AA582 /* BaseService.m */,
 				FBA40E9018CF35B9000AA582 /* AccountService.h */,
@@ -352,7 +352,7 @@
 				FBA40E9618CF35D8000AA582 /* ObjectService.m in Sources */,
 				FBA40E9C18CF3621000AA582 /* BaseService.m in Sources */,
 				FBA40EB718D0AACE000AA582 /* ContainerStore.m in Sources */,
-				FBA40EB418CF5B67000AA582 /* HTTPManager.m in Sources */,
+				FBA40EB418CF5B67000AA582 /* RESTManager.m in Sources */,
 				FB32369D18CE29C0006E4F68 /* FileSystem.m in Sources */,
 				FB32367218CE2796006E4F68 /* main.m in Sources */,
 				FBA40E9218CF35B9000AA582 /* AccountService.m in Sources */,

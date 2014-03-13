@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Jeremy Trufier. All rights reserved.
 //
 
-#import "HTTPManager.h"
+#import "RESTManager.h"
 #import "AccountService.h"
 #import "ObjectService.h"
 #import "ContainerService.h"
 
-@interface HTTPManager()
+@interface RESTManager()
 
 @property (readwrite, nonatomic, strong) AccountService *accountService;
 @property (readwrite, nonatomic, strong) ContainerService *containerService;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation HTTPManager
+@implementation RESTManager
 
 -(id) init {
     if (self = [super init]) {
@@ -39,6 +39,8 @@
     return self;
 }
 
+#pragma mark - Singleton accessors
+
 + (id)sharedManager {
     static BaseService *sharedManager = nil;
     static dispatch_once_t onceToken;
@@ -49,16 +51,18 @@
 }
 
 +(ContainerService *)container {
-    return [[HTTPManager sharedManager] containerService];
+    return [[RESTManager sharedManager] containerService];
 }
 
 +(ObjectService *)object {
-    return [[HTTPManager sharedManager] objectService];
+    return [[RESTManager sharedManager] objectService];
 }
 
 +(AccountService *)account {
-    return [[HTTPManager sharedManager] accountService];
+    return [[RESTManager sharedManager] accountService];
 }
+
+#pragma mark - Authentication
 
 -(void) auth {
     dispatch_once(&oncePendingAuth, ^{
@@ -91,11 +95,41 @@
     });
 }
 
--(void) GET: (NSString *)URLString
- parameters:(NSDictionary *)parameters
-   xheaders: (NSDictionary *)xheaders
-    success:(void (^)(id data, NSDictionary *headers))success
-    failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
+#pragma mark - REST requests & aliases
+- (void)request: (int)restCommand
+   forRessource: (NSString *)ressource
+        success: (void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+        failure: (void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    [self request:restCommand forRessource:ressource withParameters:nil andXHeaders:nil andBuildBodyWithBlock:nil success:success failure:failure];
+}
+
+- (void)request: (int)restCommand
+   forRessource: (NSString *)ressource
+ withParameters: (NSDictionary *)parameters
+        success: (void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+        failure: (void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    [self request:restCommand forRessource:ressource withParameters:parameters andXHeaders:nil andBuildBodyWithBlock:nil success:success failure:failure];
+}
+
+- (void)request: (int)restCommand
+   forRessource: (NSString *)ressource
+ withParameters: (NSDictionary *)parameters
+    andXHeaders: (NSDictionary *)xheaders
+        success: (void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+        failure: (void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    [self request:restCommand forRessource:ressource withParameters:parameters andXHeaders:xheaders andBuildBodyWithBlock:nil success:success failure:failure];
+}
+
+- (void)request: (int)restCommand
+   forRessource: (NSString *)ressource
+ withParameters: (NSDictionary *)parameters
+    andXHeaders: (NSDictionary *)xheaders
+andBuildBodyWithBlock: (void (^)(id <AFMultipartFormData> formData))bodyBlock
+        success: (void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+        failure: (void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
     if (self.storageURL == nil) {
         dispatch_suspend(operationQueue);
@@ -104,8 +138,46 @@
     
     // Using a queue to be able to suspend whenever we want, for exemple when token needs to be renewed or when internet connection is lost
     dispatch_async(operationQueue, ^{
-        NSLog(@"GET: %@", [[NSURL URLWithString:URLString relativeToURL:self.storageURL] absoluteString]);
-        NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.storageURL] absoluteString] parameters:parameters error:nil];
+        NSString *command;
+        switch (restCommand) {
+            case REST_GET:
+                command = @"GET";
+                break;
+            case REST_HEAD:
+                command = @"HEAD";
+                break;
+            case REST_POST:
+                command = @"POST";
+                break;
+            case REST_PUT:
+                command = @"PUT";
+                break;
+            case REST_DELETE:
+                command = @"DELETE";
+                break;
+            case REST_TRACE:
+                command = @"TRACE";
+                break;
+            case REST_OPTIONS:
+                command = @"OPTIONS";
+                break;
+            case REST_CONNECT:
+                command = @"CONNECT";
+                break;
+            case REST_PATCH:
+                command = @"PATCH";
+                break;
+            default:
+                command = @"GET";
+                break;
+        }
+        
+        NSLog(@"%@: %@", command, ressource);
+        
+        NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:command
+                                                                       URLString:[[NSURL URLWithString:ressource relativeToURL:self.storageURL] absoluteString]
+                                                                      parameters:parameters
+                                                                           error:nil];
         
         [xheaders enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
             [request setValue:obj forHTTPHeaderField:[NSString stringWithFormat:@"X-%@", key]];
@@ -114,10 +186,9 @@
         AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
             success(responseObject, [operation.response allHeaderFields]);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
             // if need_auth {
             dispatch_suspend(operationQueue);
-            [self GET:URLString parameters:parameters xheaders:xheaders success:success failure:failure];
+            [self request:restCommand forRessource:ressource withParameters:parameters andXHeaders:xheaders andBuildBodyWithBlock:bodyBlock success:success failure:failure];
             //}
             failure(operation, error);
         }];
