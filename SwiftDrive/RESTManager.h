@@ -60,8 +60,28 @@
    forRessource: (NSString *)ressource
  withParameters: (NSDictionary *)parameters
     andXHeaders: (NSDictionary *)xheaders
-andBuildBodyWithBlock: (void (^)(id <AFMultipartFormData> formData))bodyBlock
+        andBody: (id)body
         success: (void (^)(AFHTTPRequestOperation *operation, id responseObject))success
         failure: (void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+- (void)request: (int)restCommand
+   forRessource: (NSString *)ressource
+ withParameters: (NSDictionary *)parameters
+    andXHeaders: (NSDictionary *)xheaders
+        andBody: (id)body
+        success: (void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+        failure: (void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+ uploadProgress: (void (^)(NSUInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite))uploadProgress;
+
+
+//tmp
+- (void)requestup: (int)restCommand
+     forRessource: (NSString *)ressource
+   withParameters: (NSDictionary *)parameters
+      andXHeaders: (NSDictionary *)xheaders
+          andBody: (id)body
+          success: (void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+          failure: (void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+   uploadProgress: (void (^)(NSUInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite))uploadProgress;
 
 @end

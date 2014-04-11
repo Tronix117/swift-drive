@@ -10,6 +10,17 @@
 
 @interface ObjectService : BaseService
 
--(NSData *) getContentSyncAtPath:(NSString *) path forContainer: (NSString *) containerName;
+-(NSData *) getContentSyncAtPath:(NSString *)path forContainer:(NSString *)containerName;
+-(BOOL) putDataSyncAtPath:(NSString *)path
+             forContainer:(NSString *)containerName
+                 withData:(const char *)buffer
+                  andSize:(size_t)size
+                 atOffset:(off_t)offset
+            andAttributes:(NSDictionary *)attributes;
+
+-(void) putDataChunkedAtPath:(NSString *)path
+                forContainer:(NSString *)containerName
+                  fromStream:(NSInputStream *)inputStream;
+
 
 @end

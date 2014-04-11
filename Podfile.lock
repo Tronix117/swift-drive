@@ -15,11 +15,14 @@ PODS:
   - AFNetworking/Reachability (2.2.0)
   - AFNetworking/Security (2.2.0)
   - AFNetworking/Serialization (2.2.0)
+  - BBHTTP (0.9.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - BBHTTP (~> 0.9)
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
+  BBHTTP: 875e0a485a76758a84b5fb6cdd08f9007352b346
 
 COCOAPODS: 0.29.0

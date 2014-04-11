@@ -77,7 +77,7 @@
     NSString* mountPath = @"/Volumes/SwiftDrive";
     fs_delegate_ = [[FileSystem alloc] init];
     fs_ = [[GMUserFileSystem alloc] initWithDelegate:fs_delegate_ isThreadSafe:YES];
-    [fs_delegate_ setFS: fs_];
+    [fs_delegate_ setContainerName:@"default"];
     
     NSMutableArray* options = [NSMutableArray array];
     NSString* volArg = [NSString stringWithFormat:@"volicon=%@", [[NSBundle mainBundle] pathForResource:@"HDRVIcon" ofType:@"icns"]];
